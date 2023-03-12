@@ -1,0 +1,105 @@
+body {
+    background-color: #f8eff8;
+    font-family: 'Open Sans', sans-serif;
+    color: ;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.container{
+    width: 600px;
+    margin: auto;
+}
+
+.bayan-tab__title {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 0;
+    position: relative;
+}
+
+.bayan-tab {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid grey;
+    cursor: pointer;
+}
+.bayan-tab:last-child {
+    border-bottom: 1px solid grey;
+}
+.bayan-tab:hover {
+    background: #fff;
+}
+.bayan-tab:active {
+    background: red;
+}
+
+.bayan-tabs .bayan-tab__container {
+    display: none;
+}
+
+.bayan-tab:hover .bayan-tab__container {
+    display: flex;
+}
+
+.bayan-tabs .bayan-tab__title:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 10px;
+    top: 18px;
+    background: url(./img/add.svg) no-repeat center center;
+}
+
+.bayan-tabs .bayan-tab__title:hover:after,
+input:checked + .bayan-tab__title:after {
+    background: url(./img/close.svg) no-repeat center center;
+}
+
+.bayan-tab__container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 200px;
+    transition: all .3s;
+}
+
+.meme-img {
+    width: 100%;
+    height: 100%;
+}
+
+.bayan-tabs input:checked ~ .bayan-tab__container {
+    display: flex;
+    height: 200px;
+}
+
+
+
+
+
+
+.tabs .tab_title,
+.tabs .tab_content {
+    /* закрыты */
+}
+
+.tabs .tab:active .tab_title,
+.tabs .tab:active .tab_content {
+    /* активны */
+}
+
+.tabs .tab:hover .tab_title,
+.tabs .tab:hover .tab_content,
+.tabs .tab input[name="bayan"]:checked ~ .tab_title,
+.tabs .tab input[name="bayan"]:checked ~ .tab_content {
+    /* открыты */
+}
