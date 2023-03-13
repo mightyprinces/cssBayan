@@ -1,7 +1,10 @@
+html {
+    font-size: 10px;
+}
+
 body {
     background-color: #f8f1ef;
     font-family: 'Open Sans', sans-serif;
-    font-size: 10px;
 }
 
 p {
@@ -10,8 +13,8 @@ p {
 }
 
 h1 {
-    font-size: 5em;
-    margin-top: 1.5em;
+    font-size: 5rem;
+    margin-top: 5rem;
 }
 
 input[type="radio"] {
@@ -19,7 +22,7 @@ input[type="radio"] {
 }
 
 .bayan-container {
-    width: 60%;
+    max-width: 70%;
     margin: auto;
 }
 
@@ -28,6 +31,7 @@ input[type="radio"] {
 }
 
 .bayan-tabs .bayan-tab {
+    padding: 1.2rem 0;
     transition: all .3s;
 }
 
@@ -38,37 +42,31 @@ input[type="radio"] {
     align-items: center;
 
     cursor: pointer;
-    padding: 1.2em 0;
 }
 
 .bayan-tabs .bayan-tab__title__text {
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 .bayan-tabs .bayan-tab {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #00000080;
+    border-top: 0.1rem solid #00000080;
     cursor: pointer;
 }
 .bayan-tabs .bayan-tab:last-child {
-    border-bottom: 1px solid #00000080;
-}
-
-.bayan-tabs .bayan-tab:active .meme-img {
-    background: red;
-}
-.bayan-tabs .bayan-tab:active {
-    color: #1f76f8;
+    border-bottom: 0.1rem solid #00000080;
 }
 
 .bayan-tabs .icon {
-    width: 18px;
-    height: 18px;
+    width: 3rem;
+    height: 3rem;
     background: url(./img/add.svg) no-repeat center center;
+    background-size: cover;
 
     opacity: 0;
+    transition: all .3s;
 }
 
 .bayan-tabs:hover {
@@ -79,30 +77,28 @@ input[type="radio"] {
     opacity: 1;
 }
 
-.bayan-tabs .bayan-tab__title:hover .icon,
+.bayan-tabs .bayan-tab:hover .icon,
 input:checked + .bayan-tab__title .icon {
     background: url(./img/close.svg) no-repeat center center;
+    background-size: cover;
 }
 
 .bayan-tabs .bayan-tab__container {
-    display: none;
-    /* display: flex; */
+    display: flex;
     align-self: center;
     justify-content: center;
-    margin-bottom: 10px;
-    height: 0px;
-    width: 200px;
-    margin-bottom: 20px;
+    height: 0;
+    width: 25rem;
     transition: all .3s;
 }
 .bayan-tabs .bayan-tab:hover .bayan-tab__container,
 .bayan-tabs input:checked ~ .bayan-tab__container {
     display: flex;
-    height: 200px;
+    height: 25rem;
 }
 
 .meme-img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -112,29 +108,60 @@ input:checked + .bayan-tab__title .icon {
 
 .bayan-tabs .bayan-tab:active {
     opacity: .7;
-    color: #1f76f8;
 }
 
 .bayan-tabs .bayan-tab:active input:checked + .bayan-tab__title {
-    color: #1f76f8;
+    filter: invert(37%) sepia(96%) saturate(3230%) hue-rotate(205deg) brightness(100%) contrast(95%);
 }
 
 
+/* -- media - max-width: 820px -- */
 
+@media screen and (max-width: 820px) {
+    h1 {
+        font-size: 4rem;
+        margin-top: 3rem;
+    }
 
-.tabs .tab_title,
-.tabs .tab_content {
-    /* закрыты */
+    .bayan-container {
+        max-width: 90%;
+    }
+    .bayan-tabs .bayan-tab__title__text {
+        font-size: 1.8rem;
+    }
+
+    .bayan-tabs .bayan-tab__container {
+        width: 20rem;
+    }
+    .bayan-tabs .bayan-tab:hover .bayan-tab__container,
+    .bayan-tabs input:checked ~ .bayan-tab__container {
+        height: 20rem;
+    }
 }
 
-.tabs .tab:active .tab_title,
-.tabs .tab:active .tab_content {
-    /* активны */
-}
 
-.tabs .tab:hover .tab_title,
-.tabs .tab:hover .tab_content,
-.tabs .tab input[name="bayan"]:checked ~ .tab_title,
-.tabs .tab input[name="bayan"]:checked ~ .tab_content {
-    /* открыты */
+/* -- media - max-width: 320px -- */
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .bayan-container {
+        max-width: 90%;
+    }
+
+    .bayan-tabs .bayan-tab__title__text {
+        font-size: 1.5rem;
+    }
+
+    .bayan-tabs .bayan-tab__container {
+        width: 18rem;
+    }
+    .bayan-tabs .bayan-tab:hover .bayan-tab__container,
+    .bayan-tabs input:checked ~ .bayan-tab__container {
+        height: 18rem;
+    }
 }
